@@ -45,6 +45,21 @@ $level5 : #59c06e
 
   @return unquote($background-image)
 
+@function circular-progress2($maxPercent, $percent, $color-bar, $color-back)
+
+  $increment: 360 / $maxPercent
+  $half: round($maxPercent / 2)
+  $background-image: ''
+
+  @if $percent < $half
+    $nextdeg: 90deg +  ($increment * $percent)
+    $background-image: 'linear-gradient(90deg, #{$color-back} 50%, transparent 50%, transparent),linear-gradient(#{$nextdeg}, #{$color-bar} 50%, #{$color-back} 50%, #{$color-back})'
+  @else
+    $nextdeg: -90deg + ($increment * ($percent - $half))
+
+    $background-image: 'linear-gradient(#{$nextdeg}, #{$color-bar} 50%, transparent 50%, transparent),linear-gradient(270deg, #{$color-bar} 50%, #{$color-back} 50%, #{$color-back})'
+
+  @return unquote($background-image)
 
 
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video
@@ -335,6 +350,149 @@ table
     &::before
       color: #59c06e
 
+.gradeContainer
+  width: 2.4cm
+  height: 3.5cm
+  position: absolute
+  &.red
+    color: #e0405c
+  &.green
+    color: #59c06e
+  .bigText
+    font-size: 11pt
+    margin-top: 0.1cm
+  .smallText
+    font-size: 7pt
+    font-weight: 600
+    margin-top: 0.1cm
+
+.gradesFull
+  width: 2.4cm
+  height: 2.4cm
+  .red
+    width: 2.4cm
+    height: 2.4cm
+    background-size: contain !important
+    color: #e0405c
+    p
+      text-align: center
+      vertical-align: middle
+      line-height: 2.4cm
+      font-weight: 600
+      font-size: 10pt
+    &.level1
+      background: url('img/grades/r1.png')no-repeat
+    &.level2
+      background: url('img/grades/r2.png')no-repeat
+    &.level3
+      background: url('img/grades/r3.png')no-repeat
+    &.level4
+      background: url('img/grades/r4.png')no-repeat
+    &.level5
+      background: url('img/grades/r5.png')no-repeat
+  .green
+    width: 2.4cm
+    height: 2.4cm
+    background-size: contain !important
+    color: #59c06e
+    p
+      text-align: center
+      vertical-align: middle
+      line-height: 2.4cm
+      font-weight: 600
+      font-size: 10pt
+    &.level1
+      background: url('img/grades/g1.png')no-repeat
+    &.level2
+      background: url('img/grades/g2.png')no-repeat
+    &.level3
+      background: url('img/grades/g3.png')no-repeat
+    &.level4
+      background: url('img/grades/g4.png')no-repeat
+    &.level5
+      background: url('img/grades/g5.png')no-repeat
+
+
+
+.gradesHalf
+  width: 2.4cm
+  height: 2.4cm
+  font-weight: 600
+  font-size: 9pt
+  .red
+    width: 2.4cm
+    height: 1.1cm
+    position: relative
+    background-size: contain !important
+    color: #e0405c
+    &.top
+      top: 0
+      p
+        -webkit-transform: scaleY(-1)
+        transform: scaleY(-1)
+        position: absolute
+        bottom: 0
+        display: block
+        text-align: center
+        width: 2.4cm
+    &.bottom
+      -webkit-transform: scaleY(-1)
+      transform: scaleY(-1)
+      margin-top: 0.2cm
+      p
+        -webkit-transform: scaleY(-1)
+        transform: scaleY(-1)
+        position: absolute
+        bottom: 0
+        display: block
+        text-align: center
+        width: 2.4cm
+    &.level1
+      background: url('img/grades/hr1.png')no-repeat
+    &.level2
+      background: url('img/grades/hr2.png')no-repeat
+    &.level3
+      background: url('img/grades/hr3.png')no-repeat
+    &.level4
+      background: url('img/grades/hr4.png')no-repeat
+    &.level5
+      background: url('img/grades/hr5.png')no-repeat
+  .green
+    width: 2.4cm
+    height: 1.1cm
+    position: relative
+    background-size: contain !important
+    color: #59c06e
+    &.top
+      top: 0
+      p
+        position: absolute
+        bottom: 0
+        display: block
+        text-align: center
+        width: 2.4cm
+    &.bottom
+      -webkit-transform: scaleY(-1)
+      transform: scaleY(-1)
+      margin-top: 0.2cm
+      p
+        -webkit-transform: scaleY(-1)
+        transform: scaleY(-1)
+        position: absolute
+        bottom: 0
+        display: block
+        text-align: center
+        width: 2.4cm
+    &.level1
+      background: url('img/grades/hg1.png')no-repeat
+    &.level2
+      background: url('img/grades/hg2.png')no-repeat
+    &.level3
+      background: url('img/grades/hg3.png')no-repeat
+    &.level4
+      background: url('img/grades/hg4.png')no-repeat
+    &.level5
+      background: url('img/grades/hg5.png')no-repeat
 
 #container
   width: 19cm
@@ -436,3 +594,180 @@ table
       background-color: $level4
     &.level5
       background-color: $level5
+
+
+.posturMain
+  background: url('img/postur.png')no-repeat center
+  background-size: contain
+  height: 14cm
+  width: 19cm
+  .postur_left
+    width: 9.4cm
+    height: 14cm
+    display: inline-block
+    canvas
+      color: #56ff62
+  .postur_right
+    width: 9.4cm
+    height: 14cm
+    display: inline-block
+
+.omurga
+  width: 6cm
+
+
+.omurgaS
+  width: 6cm
+  height: 7cm
+  display: inline-block
+  margin-right: 0.5cm
+  img
+    height: 4cm
+    object-fit: contain
+  .yaziKenarlik
+    width: 6cm
+    height: 5.5cm
+    border-top: 0
+    margin: 0
+    th
+      border-top: 0
+      text-align: center
+      p
+        font-weight: 600
+        text-align: center
+        font-size: 11pt
+        margin-top: 0.2cm
+
+.tabanlik
+  width: 12.5cm
+
+.tabanlikS
+  width: 12.5cm
+  height: 7cm
+  display: inline-block
+  .yaziKenarlik
+    width: 12.5cm
+    height: 5cm
+    border-top: 0
+    margin: 0
+    th
+      border-top: 0
+      text-align: center
+      .upperText
+        background: url('img/point.png') no-repeat
+        height: 0.5cm
+        font-weight: 600
+        padding-left: 0.6cm
+        vertical-align: center
+        background-size: contain
+        margin: auto
+      .upperTextIco
+        background: url('img/point.png') no-repeat
+        background-size: contain
+        height: 0.5cm
+        width: 0.5cm
+        position: absolute
+        top: 20cm
+        left: 13cm
+      .altKisim
+        margin-top: 0.5cm
+        height: 4.1cm
+        background: url('img/bg-divider.png')no-repeat center
+        background-size: contain
+        .SolText
+          display: inline-block
+          width: 2.5cm
+          text-align: left
+          vertical-align: middle
+          height: 5cm
+          p
+            text-align: left
+            line-height: 0.1cm
+          .aIndex
+            color: #675aa3
+            font-weight: 600
+          .percent
+            font-weight: 600
+            font-size: 11pt
+          .tabanType
+            font-size: 9pt
+        .SagText
+          display: inline-block
+          width: 2.5cm
+          text-align: right !important
+          vertical-align: middle
+          height: 5cm
+          p
+            text-align: right
+            line-height: 0.1cm
+          .aIndex
+            color: #675aa3
+            font-weight: 600
+          .percent
+            font-weight: 600
+            font-size: 11pt
+          .tabanType
+            font-size: 9pt
+        .ayak
+          display: inline-block
+          width: 6cm
+          img
+            object-fit: contain
+            width: 6cm
+
+.somototip
+  .leffImage
+    width: 12cm
+    height: 12cm
+    display: inline-block
+    background: url("img/somototype.png")no-repeat
+    background-size: contain
+  .rightItems
+    width: 7cm
+    height: 13.5cm
+    display: inline-block
+    table
+      width: 7cm
+      height: 12cm
+      margin-left: 0
+      margin-right: 0
+      margin-top: 1cm !important
+      .text
+        padding: 0.2cm
+        font-size: 9pt
+      th
+        padding: 0
+      .itemColor
+        padding: 0.2cm
+        .titleS
+          margin-bottom: 0.1cm
+        .contain
+          font-size: 8pt
+          margin-bottom: 0.1cm
+        &.purple
+          background: #e2dded
+          color: #665ba3
+        &.velvet
+          background: #f0d9eb
+          color: #df4060
+        &.orange
+          background: #f8dbe4
+          color: #ff8429
+
+.footnote
+  font-size: 6pt
+  font-weight: 600
+
+.leftt
+  width: 9cm
+  display: inline-block
+  img
+    object-fit: contain
+    width: 9cm
+    height: 5cm
+.rightt
+  width: 9cm
+  display: inline-block
+  p
+    font-size: 8pt
+    margin-bottom: 0.1cm
