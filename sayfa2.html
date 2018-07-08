@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <title>Untitled Document</title>
-  <link rel="stylesheet" type="text/css" href="1.min.css">
+  <link rel="stylesheet" type="text/css" href="1.css">
   <script src="jquery.js"></script>
   <script>
     $(document).ready(function() {
@@ -22,7 +22,20 @@
           {
             "level": 2,
             "text": "Pro Agility",
+            "insideText": "84vgvg848"
+          },{
+            "level": 4,
+            "text": "20m Koşu",
+            "insideText": "25sn"
+          },
+          {
+            "level": 2,
+            "text": "Pro Agility",
             "insideText": "84848"
+          } ,{
+            "level": 2,
+            "text": "Pro Agility",
+            "insideText": "84ffs848"
           }
         ],
         "alt": [{
@@ -32,6 +45,19 @@
           },
           {
             "level": 5,
+            "text": "Pro Agility",
+            "insideText": "84848"
+          }, {
+            "level": 5,
+            "text": "Pro Agility",
+            "insideText": "84848"
+          },
+          {
+            "level": 5,
+            "text": "Pro Agility",
+            "insideText": "84848"
+          }, {
+            "level": 1,
             "text": "Pro Agility",
             "insideText": "84848"
           }
@@ -45,11 +71,13 @@
       data.ust.forEach(function(e) {
         $(".CircleArry").append('<div class="fieldsUst"><div class="circular-progress level' + e.level + ' itemID_' + itemID + '"></div></div><div class="fieldsUstYazi level' + e.level + '">' + e.text + '</div>');
         $('<style>.circular-progress.itemID_' + itemID + ':before{content:"' + e.insideText + '"}</style>').appendTo('head');
+        itemID++;
       });
 
       data.alt.forEach(function(e) {
         $(".CircleArry").append('<div class="fieldsAlt"><div class="circular-progress level' + e.level + ' itemID_' + itemID + '"></div></div><div class="fieldsAltYazi level' + e.level + '">' + e.text + '</div>');
         $('<style>.circular-progress.itemID_' + itemID + ':before{content:"' + e.insideText + '"}</style>').appendTo('head');
+        itemID++;
       });
 
 
@@ -320,7 +348,7 @@
 <body>
   <div class="container">
     <section class="ust_yazi">
-      <div class="topBAR minimal padTOP">
+      <div class="topBAR minimal padTOP super">
         Fonksiyonel Kapasite Analizi
       </div>
 
