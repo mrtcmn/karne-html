@@ -10,336 +10,132 @@
     $(document).ready(function() {
       console.log("ready!");
 
-
-
-      /// sadece data düzenlenmesi yeterli
       let data = {
-        "ust": [{
-            "level": 4,
-            "text": "20m Koşu",
-            "insideText": "25sn"
-          },
-          {
-            "level": 2,
-            "text": "Pro Agility",
-            "insideText": "84vgvg848"
-          },{
-            "level": 4,
-            "text": "20m Koşu",
-            "insideText": "25sn"
-          },
-          {
-            "level": 2,
-            "text": "Pro Agility",
-            "insideText": "84848"
-          } ,{
-            "level": 2,
-            "text": "Pro Agility",
-            "insideText": "84ffs848"
-          }
-        ],
-        "alt": [{
-            "level": 4,
-            "text": "20m Koşu",
-            "insideText": "25sn"
-          },
-          {
-            "level": 5,
-            "text": "Pro Agility",
-            "insideText": "84848"
-          }, {
-            "level": 5,
-            "text": "Pro Agility",
-            "insideText": "84848"
-          },
-          {
-            "level": 5,
-            "text": "Pro Agility",
-            "insideText": "84848"
-          }, {
-            "level": 1,
-            "text": "Pro Agility",
-            "insideText": "84848"
-          }
-        ]
-      };
+        'omuzsev': 2
+      }
 
-      let ustNumber = data.ust.length;
-      let altNumber = data.alt.length;
+      let green = '#56ff62';
+      let red = "#e0405c";
 
-      let itemID = 0;
-      data.ust.forEach(function(e) {
-        $(".CircleArry").append('<div class="fieldsUst"><div class="circular-progress level' + e.level + ' itemID_' + itemID + '"></div></div><div class="fieldsUstYazi level' + e.level + '">' + e.text + '</div>');
-        $('<style>.circular-progress.itemID_' + itemID + ':before{content:"' + e.insideText + '"}</style>').appendTo('head');
-        itemID++;
-      });
+      var canvas = document.getElementById("postur_left");
 
-      data.alt.forEach(function(e) {
-        $(".CircleArry").append('<div class="fieldsAlt"><div class="circular-progress level' + e.level + ' itemID_' + itemID + '"></div></div><div class="fieldsAltYazi level' + e.level + '">' + e.text + '</div>');
-        $('<style>.circular-progress.itemID_' + itemID + ':before{content:"' + e.insideText + '"}</style>').appendTo('head');
-        itemID++;
-      });
-
-
-
-
-      let settings = {
-        "ust5": {
-          "_step": 15,
-          "_angle": 16,
-          "yazi": [{
-              "left": 0,
-              "top": 10
-            },
-            {
-              "left": -10,
-              "top": 10
-            },
-            {
-              "left": -25,
-              "top": 20
-            },
-            {
-              "left": -25,
-              "top": 15
-            },
-            {
-              "left": 60,
-              "top": 10
-            }
-          ]
-        },
-        "ust4": {
-          "_step": 12,
-          "_angle": 16,
-          "yazi": [{
-              "left": 0,
-              "top": 10
-            },
-            {
-              "left": -10,
-              "top": 10
-            },
-            {
-              "left": -25,
-              "top": 20
-            },
-            {
-              "left": 80,
-              "top": 15
-            }
-          ]
-        },
-        "ust3": {
-          "_step": 8,
-          "_angle": 16,
-          "yazi": [{
-              "left": 0,
-              "top": 10
-            },
-            {
-              "left": -10,
-              "top": 10
-            },
-            {
-              "left": 145,
-              "top": 20
-            }
-          ]
-        },
-        "ust2": {
-          "_step": 7,
-          "_angle": 54,
-          "yazi": [{
-              "left": -10,
-              "top": 20
-            },
-            {
-              "left": -40,
-              "top": 20
-            }
-          ]
-        },
-        "ust1": {
-          "_step": 7,
-          "_angle": 23,
-          "yazi": [{
-            "left": 0,
-            "top": 10
-          }]
-        },
-        "alt5": {
-          "_step": 14,
-          "_angle": 38,
-          "yazi": [{
-              "left": 15,
-              "top": 0
-            },
-            {
-              "left": 10,
-              "top": -10
-            },
-            {
-              "left": 20,
-              "top": -10
-            },
-            {
-              "left": -15,
-              "top": -10
-            },
-            {
-              "left": -45,
-              "top": 0
-            }
-          ]
-        },
-        "alt4": {
-          "_step": 11,
-          "_angle": 38,
-          "yazi": [{
-              "left": 10,
-              "top": 0
-            },
-            {
-              "left": 5,
-              "top": -5
-            },
-            {
-              "left": 27,
-              "top": -10
-            },
-            {
-              "left": -35,
-              "top": 0
-            }
-          ]
-        },
-        "alt3": {
-          "_step": 9,
-          "_angle": 38,
-          "yazi": [{
-              "left": 5,
-              "top": 0
-            },
-            {
-              "left": 10,
-              "top": -10
-            },
-            {
-              "left": -55,
-              "top": -12
-            }
-          ]
-        },
-        "alt2": {
-          "_step": 7,
-          "_angle": 26,
-          "yazi": [{
-              "left": 20,
-              "top": -10
-            },
-            {
-              "left": -30,
-              "top": -15
-            }
-          ]
-        },
-        "alt1": {
-          "_step": 7,
-          "_angle": 32,
-          "yazi": [{
-            "left": 10,
-            "top": 0
-          }]
-        },
+      function drawLine(x, y, z, t, color) {
+        let context = document.getElementById("postur_left").getContext("2d");
+        context.moveTo(x, y);
+        context.lineTo(z, t);
+        context.lineWidth = 3;
+        context.strokeStyle = color;
+        context.stroke();
 
       }
 
-      var radius = 190;
-      var radius2 = 190;
-      var radiusYazi = 250;
-      var radiusYazi2 = 250;
-      var fieldsUst = $('.fieldsUst'),
-        fieldsAlt = $('.fieldsAlt'),
-        fieldsUstYazi = $('.fieldsUstYazi'),
-        fieldsAltYazi = $('.fieldsAltYazi'),
-        container = $('#container'),
-        width = container.width(),
-        height = container.height();
+      function drawLinePoint(x, y, z, t, color) {
+        let context = document.getElementById("postur_left").getContext("2d");
+        context.moveTo(x, y);
+        context.lineTo(z, t);
+        context.lineWidth = 2;
+        context.strokeStyle = color;
+        context.stroke();
 
-      var angle = settings["ust" + ustNumber]._angle;
-      var step = (2 * Math.PI) / settings["ust" + ustNumber]._step;
-      fieldsUst.each(function() {
-        var x = Math.round(width / 2 + radius * Math.cos(angle) - $(this).width() / 2);
-        var y = Math.round(height / 2 + radius * Math.sin(angle) - $(this).height() / 2);
-        if (window.console) {
-          console.log($(this).text(), x, y);
-        }
-        $(this).css({
-          left: x + 'px',
-          top: y + 'px'
-        });
-        angle += step;
+      }
+
+      function drawCircle(x, y, color) {
+        let context = document.getElementById("postur_left").getContext("2d");
+        var centerX = x;
+        var centerY = y;
+        var radius = 5;
+
+        context.beginPath();
+        context.arc(centerX, centerY, radius, 0, 2 * Math.PI, false);
+        context.fillStyle = '#fff';
+        context.fill();
+        context.lineWidth = 3;
+        context.strokeStyle = color;
+        context.stroke();
+
+      }
+
+      drawLine(155, 97, 251, 98, green);
+      drawCircle(156, 97, green);
+      drawCircle(251, 97, green);
+      drawLine(165, 110, 251, 98, red);
+      drawCircle(165, 110, red);
+      drawCircle(251, 97, red);
+
+      drawLine(173, 225, 245, 225, green);
+      drawCircle(173, 225, green);
+      drawCircle(245, 225, green);
+
+      drawLine(225, 356, 245, 225, green);
+
+      drawLine(226, 318, 221, 483, green);
+      drawCircle(173, 225, green);
+      drawCircle(245, 225, green);
+
+      drawCircle(225, 356, green);
+
+      drawLinePoint(259, 94, 276, 92, green);
+      drawLinePoint(233, 256, 276, 247, red);
+      drawLinePoint(233, 346, 279, 370, red);
+      drawLinePoint(162, 226, 149, 229, green);
+
+
+      $("#postur_left").click(function(e) {
+        getPosition(e);
       });
 
+      var canvas2 = document.getElementById("postur_right");
 
-      var angleYazi = settings["ust" + ustNumber]._angle;
-      var stepYazi = (2 * Math.PI) / settings["ust" + ustNumber]._step;
-      var ustYaziCount = 0;
-      fieldsUstYazi.each(function() {
-        var x = Math.round(width / 2 + radiusYazi * Math.cos(angleYazi) - $(this).width() / 2);
-        var y = Math.round(height / 2 + radiusYazi * Math.sin(angleYazi) - $(this).height() / 2);
-        if (window.console) {
-          console.log($(this).text(), x, y);
-        }
+      var context2 = canvas2.getContext("2d");
 
-        x += settings["ust" + ustNumber].yazi[ustYaziCount].left;
-        y += settings["ust" + ustNumber].yazi[ustYaziCount].top;
+      function drawLine2(x, y, z, t, color) {
+        context2.moveTo(x, y);
+        context2.lineTo(z, t);
+        context2.lineWidth = 3;
+        context2.strokeStyle = color;
+        context2.stroke();
 
-        $(this).css({
-          left: x + 'px',
-          top: y + 'px'
-        });
-        ustYaziCount++;
-        angleYazi += stepYazi;
+      }
+
+      function drawCircle2(x, y, color) {
+
+        var centerX = x;
+        var centerY = y;
+        var radius = 5;
+
+        context2.beginPath();
+        context2.arc(centerX, centerY, radius, 0, 2 * Math.PI, false);
+        context2.fillStyle = '#fff';
+        context2.fill();
+        context2.lineWidth = 3;
+        context2.strokeStyle = color;
+        context2.stroke();
+
+      }
+
+      drawLine2(188, 47, 188, 107, green);
+      drawCircle2(188, 47, green);
+      drawCircle2(188, 107, green);
+
+      drawLine2(188, 107, 188, 237, green);
+      drawCircle2(188, 237, green);
+
+      drawLine2(188, 237, 188, 347, green);
+      drawCircle2(188, 347, green);
+
+      drawLine2(188, 347, 188, 477, green);
+      drawCircle2(188, 477, green);
+
+      $("#postur_right").click(function(e) {
+        getPosition(e);
       });
 
-
-      var angle2 = settings["alt" + altNumber]._angle;
-      var step2 = (2 * Math.PI) / settings["alt" + altNumber]._step;
-      fieldsAlt.each(function() {
-        var x = Math.round(width / 2 + radius2 * Math.cos(angle2) - $(this).width() / 2);
-        var y = Math.round(height / 2 + radius2 * Math.sin(angle2) - $(this).height() / 2);
-        if (window.console) {
-          console.log($(this).text(), x, y);
-        }
-        $(this).css({
-          left: x + 'px',
-          top: y + 'px'
-        });
-        angle2 += step2;
-      });
-
-      var angleYazi2 = settings["alt" + altNumber]._angle;
-      var stepYazi2 = (2 * Math.PI) / settings["alt" + altNumber]._step;
-      var altYaziCount = 0;
-      fieldsAltYazi.each(function() {
-        var x = Math.round(width / 2 + radiusYazi2 * Math.cos(angleYazi2) - $(this).width() / 2);
-        var y = Math.round(height / 2 + radiusYazi2 * Math.sin(angleYazi2) - $(this).height() / 2);
-        if (window.console) {
-          console.log($(this).text(), x, y);
-        }
-
-        x += settings["alt" + altNumber].yazi[altYaziCount].left;
-        y += settings["alt" + altNumber].yazi[altYaziCount].top;
-
-        $(this).css({
-          left: x + 'px',
-          top: y + 'px'
-        });
-        altYaziCount++;
-        angleYazi2 += stepYazi2;
-      });
+      function getPosition(event) {
+        var rect = canvas.getBoundingClientRect();
+        var x = event.clientX - rect.left;
+        var y = event.clientY - rect.top;
+        console.log(x + ":" + y)
+      };
 
     });
   </script>
@@ -349,106 +145,213 @@
   <div class="container">
     <section class="ust_yazi">
       <div class="topBAR minimal padTOP super">
-        Fonksiyonel Kapasite Analizi
+        Postür Analizi
+      </div>
+      <div class="posturMain">
+
+        <div class="postur_left">
+
+          <div class="gradeContainer red" style="top: 7cm; left: 7.5cm">
+            <div class="gradesHalf">
+              <div class="green top level3">
+                <p>SOL - 11.2</p>
+              </div>
+              <div class="red bottom level5">
+                <p>SAĞ - 23.4</p>
+              </div>
+            </div>
+            <div class="gradeText">
+              <p class="bigText">Omuz Seviyesi</p>
+              <p class="smallText">Sağ taraf düşük</p>
+            </div>
+          </div>
+
+          <div class="gradeContainer red" style="top: 11cm; left: 7.5cm">
+            <div class="gradesHalf">
+              <div class="green top level3">
+                <p>SOL - 11.2</p>
+              </div>
+              <div class="red bottom level5">
+                <p>SAĞ - 23.4</p>
+              </div>
+            </div>
+            <div class="gradeText">
+              <p class="bigText">İliopsoas Kası3</p>
+              <p class="smallText">İKİ TARAF KISA</p>
+            </div>
+          </div>
+
+          <div class="gradeContainer green" style="top: 7cm; left: 1.5cm">
+            <div class="gradesFull">
+              <div class="green level3">
+                <p>SOL - 11.2</p>
+              </div>
+            </div>
+            <div class="gradeText">
+              <p class="bigText">Pelvis Seviyesi</p>
+              <p class="smallText">SAĞ TARAF DÜŞÜK</p>
+            </div>
+          </div>
+
+
+          <div class="gradeContainer green" style="top: 3cm; left: 7.5cm">
+            <div class="gradesFull">
+              <div class="green level3">
+                <p>SOL - 11.2</p>
+              </div>
+            </div>
+            <div class="gradeText">
+              <p class="bigText">Omuz Seviyesi</p>
+              <p class="smallText">Sağ taraf kısa</p>
+            </div>
+          </div>
+          <div class="gradeContainer green" style="top: 5cm; left: 10.8cm">
+            <div class="gradesFull">
+              <div class="green level3">
+                <p>SOL - 11.2</p>
+              </div>
+            </div>
+            <div class="gradeText">
+              <p class="bigText">Gövde Anterior Fleksiyon</p>
+            </div>
+          </div>
+
+          <div class="gradeContainer green" style="top: 10.5cm; left: 10.8cm">
+            <div class="gradesFull">
+              <div class="green level3">
+                <p>SOL - 11.2</p>
+              </div>
+            </div>
+            <div class="gradeText">
+              <p class="bigText">İliopsoas Kası7</p>
+              <p class="smallText">İKİ TARAF KISA</p>
+            </div>
+          </div>
+
+          <div class="gradeContainer green" style="top: 2.5cm; left: 16cm">
+            <div class="gradesFull">
+              <div class="green level3">
+                <p>SOL - 11.2</p>
+              </div>
+            </div>
+            <div class="gradeText">
+              <p class="bigText">İliopsoas Kası8</p>
+              <p class="smallText">İKİ TARAF KISA</p>
+            </div>
+          </div>
+
+          <div class="gradeContainer green" style="top: 6.5cm; left: 16cm">
+            <div class="gradesFull">
+              <div class="green level3">
+                <p>SOL - 11.2</p>
+              </div>
+            </div>
+            <div class="gradeText">
+              <p class="bigText">İliopsoas Kası9</p>
+              <p class="smallText">İKİ TARAF KISA</p>
+            </div>
+          </div>
+
+          <div class="gradeContainer red" style="top: 10.5cm; left: 16cm">
+            <div class="gradesHalf">
+              <div class="green top level3">
+                <p>SOL - 11.2</p>
+              </div>
+              <div class="red bottom level5">
+                <p>SAĞ - 23.4</p>
+              </div>
+            </div>
+            <div class="gradeText">
+              <p class="bigText">İliopsoas Kası10</p>
+              <p class="smallText">İKİ TARAF KISA</p>
+            </div>
+          </div>
+
+          <canvas id="postur_left" width="355" height="529">
+    </canvas>
+        </div>
+
+        <div class="postur_right">
+          <canvas id="postur_right" width="355" height="529">
+    </canvas>
+
+        </div>
+
+      </div>
+
+
+
+
+    </section>
+    <section class="omurgaS">
+      <div class="topBAR minimal omurga">
+        Omurga Analizi
+      </div>
+      <table class="yaziKenarlik">
+        <tr>
+          <th>
+            <img src="img/normal.png">
+            <img src="img/normal1.png">
+            <p>Normal Omurga</p>
+            </aside>
+          </th>
+        </tr>
+      </table>
+    </section>
+    <section class="tabanlikS">
+      <div class="topBAR minimal tabanlik">
+        Ayak Taban Basıncı Analizi
+      </div>
+      <table class="yaziKenarlik">
+        <tr>
+          <th>
+          <span class="upperText">Ağırlık Merkezi 0,2mm önde, 1,2mm solda.</span>
+          <div class="altKisim">
+
+            <div class="SolText">
+<p class="aIndex">ARK İNDEKSİ</p>
+<p class="percent">%23.66</p>
+<p class="tabanType">NORMAL TABAN</p>
+            </div>
+
+            <div class="ayak">  <p class="upperTextIco"></p><img src="img/pressure.png"></div>
+<div class="SagText">
+  <p class="aIndex">ARK İNDEKSİ</p>
+<p class="percent">%23.66</p>
+<p class="tabanType">NORMAL TABAN</p></div>
+
+          </div>
+
+          </th>
+        </tr>
+      </table>
+    </section>
+    <section class="ust_yazi">
+      <div class="topBAR minimal">
+        Yorum ve Değerlendirmeler
       </div>
 
       <table class="yaziKenarlik">
         <tr>
           <th>
 
+<p>
+      Ayak postür incelemesinde; SOL ayağı PRONASYONDA(içe doğru dönme), SOL ayağı NORMAL bulunmuştur. Gözü kapalı denge testinin kötü olması bozulan sol ayak postürü ile gelişen bozulmuş duyu algısı ile açıklanabilir.
+</p><p>
+Ayak postürünün bir parçası olan ayak iç arkı yüksekliği; Sol ve Sağ ayak için NORMAL bulunmuştur.
+</p><p>
+Kısalık testlerinde; kısalık bulunmamıştır. Skolyoz testinde; herhangi anormalliğe rastlanamamıştır.
+</p><p>
+Postür Analizinde; SAĞ taraf OMUZ DÜŞÜKLÜĞÜ görülmüştür. ARTMIŞ LUMBAR LORDOZ görülmüştür. Kas dengesizlikleri, vücut algı bozuklukları gibi durumlar postürde görülen anormalliklere yol açabilir.
+</p>
 
-            <p><strong>Denge testinde;</strong> Gözler açık olan testte iyi performansına karşın gözü kapalı testte kötü performans sergilemiştir. Propriyooseptif duyu algısı iyi değildir. İyi sağlanmayan denge sporcunun yön değiştirme, mücadele sporu, atış
-              yaptığı durumlarda performans düşüklüğü yaratır.
-            </p>
-            <p>
-              <strong>FMS, Aktif Düz Bacak Kaldırma değerlendirmesi</strong> aşamasında; SAĞ taraf “2” skoru almıştır. Hamstring kasında kısalığı işaret eder. Bacak ve pelvise bağlanan hamsting kasının kısalığında, yürüme biyomekaniği bozarak sporcuyunun
-              performansını negatif etkiler ve yaralanma riskini arttırır. Düzeltici egzersizler ile hem gövde, alt ve üst ekstremite güç, kuvvet değerlerini olumlu olarak iyileştirecektir ve yaralanmaya yol açabilecek kısalık, kas dengesizliği gibi negatif
-              etkileri de ortadan kaldıracaktır.
-              <strong>Gövde Rotasyonu değerlendirmesi</strong> aşamasında; SAĞ taraf “2” skoru almıştır. Gövde, alt ve üst ekstremitelerin SOL kısımlarındaki yetersiz stabilizasyonu işaret eder. Sporcunun pas verme, koşma gibi gövdesinin döndüğü hareketlerde,
-              stabilizasyon bozulmuştur.
-            </p>
-            <div class="fms">
-              <div class="item disabled">
-                <img src="img/fms/fmsimg_03.png">
-                <p>1</p>
-              </div>
-              <div class="item">
-                <img src="img/fms/fmsimg_05.png">
-                <p>1</p>
-              </div>
-              <div class="item">
-                <img src="img/fms/fmsimg_06.png">
-                <p>1</p>
-              </div>
-              <div class="item disabled">
-                <img src="img/fms/fmsimg_07.png">
-                <p>1</p>
-              </div>
-              <div class="item disabled">
-                <img src="img/fms/fmsimg_08.png">
-                <p>1</p>
-              </div>
-              <div class="item">
-                <img src="img/fms/fmsimg_09.png">
-                <p>1</p>
-              </div>
-              <div class="item">
-                <img src="img/fms/fmsimg_10.png">
-                <p>1</p>
-              </div>
-            </div>
+
 
           </th>
         </tr>
 
       </table>
     </section>
-    <section>
-      <div class="topBAR minimal">
-        Fiziksel Uygunluk Analizi
-      </div>
-
-      <div id="container" class="CircleArry">
-
-      </div>
-    </section>
-    <section style="text-align:center;">
-      <div class="speedItems">
-        <div class="item">
-          <p class="level1">Reaksiyon</p>
-          <div class="imageInsertTHERE">
-            <img src="img/arrow.png" style="transform: rotate(-45deg);">
-          </div>
-          <p class="altyazi level1">11.6sn</p>
-        </div>
-        <div class="item">
-          <p class="level2">İvmelenme</p>
-          <div class="imageInsertTHERE">
-            <img src="img/arrow.png" style="transform: rotate(-45deg);">
-          </div>
-          <p class="altyazi level2">100sn</p>
-        </div>
-        <div class="item">
-          <p class="level5">Toplam Süre</p>
-          <div class="imageInsertTHERE">
-            <img src="img/arrow.png" style="transform: rotate(-45deg);">
-          </div>
-          <p class="altyazi level5">22sn</p>
-        </div>
-      </div>
-    </section>
-    <div class="gradeChart">
-      <p class="another">
-        <span class="level1" style="text-align:left;">DÜŞÜK</span>
-        <span class="level3">ORTA</span>
-        <span class="level5" style="text-align:right;">İYİ</span>
-      </p>
-      <p class="level1"></p>
-      <p class="level2"></p>
-      <p class="level3"></p>
-      <p class="level4"></p>
-      <p class="level5"></p>
-    </div>
 </body>
 
 </html>
