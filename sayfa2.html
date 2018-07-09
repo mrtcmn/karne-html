@@ -17,7 +17,7 @@
       let green = '#56ff62';
       let red = "#e0405c";
 
-      var canvas = document.getElementById("postur_left");
+      var canvas = document.getElementById("postur_right");
 
       function drawLine(x, y, z, t, color) {
         let context = document.getElementById("postur_left").getContext("2d");
@@ -55,12 +55,14 @@
 
       }
 
+     // drawLine(165, 110, 251, 98, red);
+     // drawCircle(165, 110, red);
+     // drawCircle(251, 97, red);
+
       drawLine(155, 97, 251, 98, green);
       drawCircle(156, 97, green);
       drawCircle(251, 97, green);
-      drawLine(165, 110, 251, 98, red);
-      drawCircle(165, 110, red);
-      drawCircle(251, 97, red);
+
 
       drawLine(173, 225, 245, 225, green);
       drawCircle(173, 225, green);
@@ -75,8 +77,8 @@
       drawCircle(225, 356, green);
 
       drawLinePoint(259, 94, 276, 92, green);
+      drawLinePoint(259, 94, 276, 92, green);
       drawLinePoint(233, 256, 276, 247, red);
-      drawLinePoint(233, 346, 279, 370, red);
       drawLinePoint(162, 226, 149, 229, green);
 
 
@@ -113,6 +115,22 @@
 
       }
 
+        function drawLinePoint2(x, y, z, t, color) {
+            let context = document.getElementById("postur_right").getContext("2d");
+            context.moveTo(x, y);
+            context.lineTo(z, t);
+            context.lineWidth = 2;
+            context.strokeStyle = color;
+            context.stroke();
+
+        }
+
+
+        drawLinePoint2(205, 75, 236, 75, green);
+        drawLinePoint2(215, 233, 238, 230, green);
+        drawLinePoint2(216, 397, 237, 387, green);
+        drawLinePoint2(138, 360, 166, 352, green);
+
       drawLine2(188, 47, 188, 107, green);
       drawCircle2(188, 47, green);
       drawCircle2(188, 107, green);
@@ -123,10 +141,12 @@
       drawLine2(188, 237, 188, 347, green);
       drawCircle2(188, 347, green);
 
-      drawLine2(188, 347, 188, 477, green);
+     drawLine2(188, 347, 188, 477, green);
       drawCircle2(188, 477, green);
 
-      $("#postur_right").click(function(e) {
+
+
+        $("#postur_right").click(function(e) {
         getPosition(e);
       });
 

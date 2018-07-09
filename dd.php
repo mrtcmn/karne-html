@@ -38,3 +38,9 @@ function arksize ( $value )
 
     }
 }
+
+
+
+pozitif
+
+grade
