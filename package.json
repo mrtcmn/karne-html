@@ -5,6 +5,7 @@
     "dev": "lite-server"
   },
   "dependencies": {
+    "chart.js": "^2.7.2",
     "lite-server": "^2.3.0"
   }
 }

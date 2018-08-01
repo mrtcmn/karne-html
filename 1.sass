@@ -44,6 +44,7 @@ $level5 : #59c06e
     $background-image: 'linear-gradient(#{$nextdeg}, #{$color-bar} 50%, transparent 50%, transparent),linear-gradient(270deg, #{$color-bar} 50%, #{$color-back} 50%, #{$color-back})'
 
   @return unquote($background-image)
+  
 
 @function circular-progress2($maxPercent, $percent, $color-bar, $color-back)
 
@@ -286,6 +287,9 @@ table
 	transform: translateX(-45%)
 
 .fms
+	&.edit
+		width: 2cm
+		display: inline
 	.item
 		width: 2.560cm
 		display: inline-block
@@ -299,6 +303,8 @@ table
 			margin-bottom: 0
 		img
 			height: 1.2cm
+			&.balance
+				height: 1.8cm
 		&.disabled
 			p
 				visibility: hidden
@@ -306,6 +312,9 @@ table
 				opacity: 0.5
 
 
+.fmsTextItem
+  width: 15cm
+  display: inline-block
 
 
 .circular-progress
@@ -761,6 +770,9 @@ table
 .footnote
   font-size: 6pt
   font-weight: 600
+  &.graph
+    font-size: 8pt
+    font-weight: 200
 
 .leftt
   width: 9cm
