@@ -8,24 +8,35 @@
   font-weight: 900
   src: url("http://app.scienceofsports.com.tr/v1/assets/karne_dosyalari/assest/SFUIDisplay-Black.otf")
 
+  @font-face
+  font-family: "fontBold"
+  src: url("http://app.scienceofsports.com.tr/v1/assets/karne_dosyalari/assest/fonts/bold.woff2")
 
-$fontMain: "SF Display", Helvetica, sans-serif
-$fontMainBLACK: "SF Display BLACK", Helvetica, sans-serif
+@font-face
+  font-family: "fontRegular"
+  src: url("http://app.scienceofsports.com.tr/v1/assets/karne_dosyalari/assest/fonts/regular.woff2")
 
-$level1 : #e0405c
-$level2 : #a14297
-$level3 : #675da6
-$level4 : #4ea0b2
-$level5 : #59c06e
+$fontMain: "fontRegular", Helvetica, sans-serif
+$fontMainBLACK: "fontRegular", Helvetica, sans-serif
+
+$level1: #e0405c
+$level2: #a14297
+$level3: #675da6
+$level4: #4ea0b2
+$level5: #59c06e
 
 .level1
   color: $level1
+
 .level2
   color: $level2
+
 .level3
   color: $level3
+
 .level4
   color: $level4
+
 .level5
   color: $level5
 
@@ -44,7 +55,6 @@ $level5 : #59c06e
     $background-image: 'linear-gradient(#{$nextdeg}, #{$color-bar} 50%, transparent 50%, transparent),linear-gradient(270deg, #{$color-bar} 50%, #{$color-back} 50%, #{$color-back})'
 
   @return unquote($background-image)
-  
 
 @function circular-progress2($maxPercent, $percent, $color-bar, $color-back)
 
@@ -62,7 +72,6 @@ $level5 : #59c06e
 
   @return unquote($background-image)
 
-
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video
   margin: 0
   padding: 0
@@ -71,7 +80,6 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   font-family: $fontMain
   font: inherit
   vertical-align: baseline
-
 
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section
   display: block
@@ -98,222 +106,219 @@ html
 body
   -webkit-text-size-adjust: none
 
-
-
-
 html
 
 body
-	width: 1200
-	height: 1697
-	background: #ff7
-	font-family: $fontMain
+  width: 1200
+  height: 1697
+  background: #ff7
+  font-family: $fontMain
 
 strong
-	font-weight: bold
+  font-weight: bold
 
 .full-centered
-	width: 100%
-	text-align: center
-	position: relative
+  width: 100%
+  text-align: center
+  position: relative
 
 .padTOP
-	padding-top: 0.8cm !important
+  padding-top: 0.8cm !important
 
 .container
-	width: 21cm
-	min-height: 29.7cm
-	height: 29.7cm
-	text-align: center
-	background: #fff url("http://app.scienceofsports.com.tr/v1/assets/karne_dosyalari/img/bg.jpg")no-repeat
-	background-size: cover
+  width: 21cm
+  min-height: 29.7cm
+  height: 29.7cm
+  text-align: center
+  background: #fff url("http://app.scienceofsports.com.tr/v1/assets/karne_dosyalari/img/bg.jpg") no-repeat
+  background-size: cover
+
 .upperArea
-	padding-top: 0.8cm
-	height: 4.2cm
-	.imgLogo
-		height: 4cm
-		position: absolute
-    left: 10,5cm
-		transform: translateX(-50%)
-	.righticons
-		right: 1cm
-		position: absolute
-		text-align: right
-		font-size: 11pt
-		p
-			height: 0.75cm
-			padding-bottom: 0.12cm
-			span
-				position: relative
-				display: inline-block
-				bottom: 0.15cm
-				padding-left: 0.15cm
-		img
-			width: 0.6cm
-			height: 0.6cm
-			object-fit: contain
-			&.qcode
-				width: 2cm
-				height: 1.85cm
-			&.qcode2
-				width: 0.2cm
-				height: 1.85cm
+  padding-top: 0.8cm
+  height: 4.2cm
+  .imgLogo
+    height: 4cm
+    position: absolute
+      left: 10, 5cm
+    transform: translateX(-50%)
+  .righticons
+    right: 1cm
+    position: absolute
+    text-align: right
+    font-size: 11pt
+    p
+      height: 0.75cm
+      padding-bottom: 0.12cm
+      span
+        position: relative
+        display: inline-block
+        bottom: 0.15cm
+        padding-left: 0.15cm
+    img
+      width: 0.6cm
+      height: 0.6cm
+      object-fit: contain
+      &.qcode
+        width: 2cm
+        height: 1.85cm
+      &.qcode2
+        width: 0.2cm
+        height: 1.85cm
 
 .topBAR
-	font-family: $fontMainBLACK
-	font-size: 18pt
-	padding-top: 0.2cm
-	padding-bottom: 0.2cm
-	color: #fff
-	background: url("https://raw.githubusercontent.com/mrtcmn/karne-html/master/img/line.png")repeat-y
-	background: -moz-linear-gradient(left, #655ba3 1%, #bb4399 48%, #e1405a 100%)
-	background: -webkit-linear-gradient(left, #655ba3 1%,#bb4399 48%,#e1405a 100%)
-	background: linear-gradient(to right, #655ba3 1%,#bb4399 48%,#e1405a 100%)
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#655ba3', endColorstr='#e1405a',GradientType=1 )
-	&.minimal
-		font-family: $fontMain
-		font-size: 14pt
-		font-weight: bold
-		margin-top: 0.2cm
-		letter-spacing: 0.02cm
-	&.super
-		margin-top: 0
-
+  font-family: $fontMainBLACK
+  font-size: 18pt
+  padding-top: 0.2cm
+  padding-bottom: 0.2cm
+  color: #fff
+  background: url("https://raw.githubusercontent.com/mrtcmn/karne-html/master/img/line.png") repeat-y
+  background: -moz-linear-gradient(left, #655ba3 1%, #bb4399 48%, #e1405a 100%)
+  background: -webkit-linear-gradient(left, #655ba3 1%, #bb4399 48%, #e1405a 100%)
+  background: linear-gradient(to right, #655ba3 1%, #bb4399 48%, #e1405a 100%)
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#655ba3', endColorstr='#e1405a', GradientType=1)
+  &.minimal
+    font-family: $fontMain
+    font-size: 14pt
+    font-weight: bold
+    margin-top: 0.2cm
+    letter-spacing: 0.02cm
+  &.super
+    margin-top: 0
 
 .icon
-	padding-left: 0.5cm
+  padding-left: 0.5cm
+
 .lol
   text-align: center
 
 table
-	border: 2px solid #bfbfbf
-	border-collapse: collapse
-	font-size: 12pt
-	width: 19cm
-	margin-left: 1cm
-	margin-right: 1cm
-	margin-top: 0.3cm
-	text-align: left
-	p
-		text-align: justify
-		margin-bottom: 0.4cm
-		font-size: 11pt
-		line-height: 0.41cm
-		&.small
-			font-size: 10pt
-			margin-bottom: 0.2cm
-			line-height: 0.35cm
-	th
-		border: 2px solid #bfbfbf
-		padding: 0.2cm 0.2cm
-		width: 9.5cm
-	&.yaziKenarlik
-		margin-top: 0 !important
-	&.anatomyIMG
-		margin-top: 0.6cm
-		margin-left: 3cm
-		margin-right: 3cm
-		border: none
-		width: 15cm
-		&.below
-			margin-top: 1cm
-		th
-			&.second
-				text-align: right
-		tr.head
-			color: #675aa3
-			font-size: 15pt
-			th
-				border: none
-	&.onsayfagrafik
-		border: none
-		color: #675ca2
-		font-size: 11pt
-		font-weight: bold
-		th
-			padding: 0.07cm 0.07cm
-			border: none
-			&.type
-				width: 8cm
-			&.val
-				width: 2cm
-				text-align: center
-			&.graphic
-				width: 9cm
-				.alt_grafik
-					margin-top: 0.50cm
-				.mmv
-					color: #609387
-					display: inline-block
-					transform: translateX(-50%)
-					position: absolute
-					font-size: 9pt
-					&.left
-					  margin-left: 2.3cm
-					&.right
-						margin-left: 6.7cm
-				.borders
-					width: 0.06cm
-					height: 0.4cm
-					background: #000000
-					opacity: 0.5
-					z-index: 12
-					position: absolute
-					&.left
-					  margin-left: 2.3cm
-					&.right
-						margin-left: 6.7cm
-				img
-					width: 9cm
-					&.circle
-						width: 0.4cm
-						height: 0.4cm
-						position: absolute
-    				z-index: 9
-						margin-top: 0.07cm
-						transform: translateX(-50%)
+  border: 2px solid #bfbfbf
+  border-collapse: collapse
+  font-size: 12pt
+  width: 19cm
+  margin-left: 1cm
+  margin-right: 1cm
+  margin-top: 0.3cm
+  text-align: left
+  p
+    text-align: justify
+    margin-bottom: 0.4cm
+    font-size: 11pt
+    line-height: 0.41cm
+    &.small
+      font-size: 10pt
+      margin-bottom: 0.2cm
+      line-height: 0.35cm
+  th
+    border: 2px solid #bfbfbf
+    padding: 0.2cm 0.2cm
+    width: 9.5cm
+  &.yaziKenarlik
+    margin-top: 0 !important
+  &.anatomyIMG
+    margin-top: 0.6cm
+    margin-left: 3cm
+    margin-right: 3cm
+    border: none
+    width: 15cm
+    &.below
+      margin-top: 1cm
+    th
+      &.second
+        text-align: right
+    tr.head
+      color: #675aa3
+      font-size: 15pt
+      th
+        border: none
+  &.onsayfagrafik
+    border: none
+    color: #675ca2
+    font-size: 11pt
+    font-weight: bold
+    th
+      padding: 0.07cm 0.07cm
+      border: none
+      &.type
+        width: 8cm
+      &.val
+        width: 2cm
+        text-align: center
+      &.graphic
+        width: 9cm
+        .alt_grafik
+          margin-top: 0.50cm
+        .mmv
+          color: #609387
+          display: inline-block
+          transform: translateX(-50%)
+          position: absolute
+          font-size: 9pt
+          &.left
+            margin-left: 2.3cm
+          &.right
+            margin-left: 6.7cm
+        .borders
+          width: 0.06cm
+          height: 0.4cm
+          background: #000000
+          opacity: 0.5
+          z-index: 12
+          position: absolute
+          &.left
+            margin-left: 2.3cm
+          &.right
+            margin-left: 6.7cm
+        img
+          width: 9cm
+          &.circle
+            width: 0.4cm
+            height: 0.4cm
+            position: absolute
+              z-index: 9
+            margin-top: 0.07cm
+            transform: translateX(-50%)
 
 .anatomy_img
-	width: 4cm
-	height: 10cm
-	position: absolute
-	transform: translateX(-50%)
-
+  width: 4cm
+  height: 10cm
+  position: absolute
+  transform: translateX(-50%)
 
 .govde_yazi
-	color: #fff
-	text-shadow: 1.847px -2.364px 5px rgba(17, 16, 13, 0.8)
-	font-weight: bold
-	z-index: 50
-	left: 10.5cm
-	top: 21.5cm
-	position: absolute
-	transform: translateX(-45%)
+  color: #fff
+  text-shadow: 1.847px -2.364px 5px rgba(17, 16, 13, 0.8)
+  font-weight: bold
+  z-index: 50
+  left: 10.5cm
+  top: 21.5cm
+  position: absolute
+  transform: translateX(-45%)
 
 .fms
-	&.edit
-		width: 2cm
-		display: inline
-	.item
-		width: 2.560cm
-		display: inline-block
-		text-align: center
-		p
-			text-align: center
-			color: #964da1
-			font-weight: bold
-			font-size: 10pt
-			padding-top: 0.2cm
-			margin-bottom: 0
-		img
-			height: 1.2cm
-			&.balance
-				height: 1.8cm
-		&.disabled
-			p
-				visibility: hidden
-			img
-				opacity: 0.5
+  &.edit
+    width: 2cm
+    display: inline
+  .item
+    width: 2.560cm
+    display: inline-block
+    text-align: center
+    p
+      text-align: center
+      color: #964da1
+      font-weight: bold
+      font-size: 10pt
+      padding-top: 0.2cm
+      margin-bottom: 0
+    img
+      height: 1.2cm
+      &.balance
+        height: 1.8cm
+    &.disabled
+      p
+        visibility: hidden
+      img
+        opacity: 0.5
 
 .itemHider
   visibility: hidden
@@ -321,7 +326,6 @@ table
 .fmsTextItem
   width: 15cm
   display: inline-block
-
 
 .circular-progress
   background: circular-progress(100, 0, #e0405c, #e0a7b1)
@@ -335,7 +339,7 @@ table
     background-color: #FAFAFA
     border-radius: 50%
     // box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12)
-    color: rgba(black,.54)
+    color: rgba(black, .54)
     content: '25cm'
     font-size: 13pt
     font-weight: bold
@@ -399,15 +403,15 @@ table
       font-weight: 600
       font-size: 10pt
     &.level1
-      background: url('https://raw.githubusercontent.com/mrtcmn/karne-html/master/img/grades/r1.png')no-repeat
+      background: url('https://raw.githubusercontent.com/mrtcmn/karne-html/master/img/grades/r1.png') no-repeat
     &.level2
-      background: url('https://raw.githubusercontent.com/mrtcmn/karne-html/master/img/grades/r2.png')no-repeat
+      background: url('https://raw.githubusercontent.com/mrtcmn/karne-html/master/img/grades/r2.png') no-repeat
     &.level3
-      background: url('https://raw.githubusercontent.com/mrtcmn/karne-html/master/img/grades/r3.png')no-repeat
+      background: url('https://raw.githubusercontent.com/mrtcmn/karne-html/master/img/grades/r3.png') no-repeat
     &.level4
-      background: url('https://raw.githubusercontent.com/mrtcmn/karne-html/master/img/grades/r4.png')no-repeat
+      background: url('https://raw.githubusercontent.com/mrtcmn/karne-html/master/img/grades/r4.png') no-repeat
     &.level5
-      background: url('https://raw.githubusercontent.com/mrtcmn/karne-html/master/img/grades/r5.png')no-repeat
+      background: url('https://raw.githubusercontent.com/mrtcmn/karne-html/master/img/grades/r5.png') no-repeat
   .green
     width: 2.4cm
     height: 2.4cm
@@ -420,17 +424,15 @@ table
       font-weight: 600
       font-size: 10pt
     &.level1
-      background: url('https://raw.githubusercontent.com/mrtcmn/karne-html/master/img/grades/g1.png')no-repeat
+      background: url('https://raw.githubusercontent.com/mrtcmn/karne-html/master/img/grades/g1.png') no-repeat
     &.level2
-      background: url('https://raw.githubusercontent.com/mrtcmn/karne-html/master/img/grades/g2.png')no-repeat
+      background: url('https://raw.githubusercontent.com/mrtcmn/karne-html/master/img/grades/g2.png') no-repeat
     &.level3
-      background: url('https://raw.githubusercontent.com/mrtcmn/karne-html/master/img/grades/g3.png')no-repeat
+      background: url('https://raw.githubusercontent.com/mrtcmn/karne-html/master/img/grades/g3.png') no-repeat
     &.level4
-      background: url('https://raw.githubusercontent.com/mrtcmn/karne-html/master/img/grades/g4.png')no-repeat
+      background: url('https://raw.githubusercontent.com/mrtcmn/karne-html/master/img/grades/g4.png') no-repeat
     &.level5
-      background: url('https://raw.githubusercontent.com/mrtcmn/karne-html/master/img/grades/g5.png')no-repeat
-
-
+      background: url('https://raw.githubusercontent.com/mrtcmn/karne-html/master/img/grades/g5.png') no-repeat
 
 .gradesHalf
   width: 2.4cm
@@ -464,15 +466,15 @@ table
         text-align: center
         width: 2.4cm
     &.level1
-      background: url('https://raw.githubusercontent.com/mrtcmn/karne-html/master/img/grades/hr1.png')no-repeat
+      background: url('https://raw.githubusercontent.com/mrtcmn/karne-html/master/img/grades/hr1.png') no-repeat
     &.level2
-      background: url('https://raw.githubusercontent.com/mrtcmn/karne-html/master/img/grades/hr2.png')no-repeat
+      background: url('https://raw.githubusercontent.com/mrtcmn/karne-html/master/img/grades/hr2.png') no-repeat
     &.level3
-      background: url('https://raw.githubusercontent.com/mrtcmn/karne-html/master/img/grades/hr3.png')no-repeat
+      background: url('https://raw.githubusercontent.com/mrtcmn/karne-html/master/img/grades/hr3.png') no-repeat
     &.level4
-      background: url('https://raw.githubusercontent.com/mrtcmn/karne-html/master/img/grades/hr4.png')no-repeat
+      background: url('https://raw.githubusercontent.com/mrtcmn/karne-html/master/img/grades/hr4.png') no-repeat
     &.level5
-      background: url('https://raw.githubusercontent.com/mrtcmn/karne-html/master/img/grades/hr5.png')no-repeat
+      background: url('https://raw.githubusercontent.com/mrtcmn/karne-html/master/img/grades/hr5.png') no-repeat
   .green
     width: 2.4cm
     height: 1.1cm
@@ -500,15 +502,15 @@ table
         text-align: center
         width: 2.4cm
     &.level1
-      background: url('https://raw.githubusercontent.com/mrtcmn/karne-html/master/img/grades/hg1.png')no-repeat
+      background: url('https://raw.githubusercontent.com/mrtcmn/karne-html/master/img/grades/hg1.png') no-repeat
     &.level2
-      background: url('https://raw.githubusercontent.com/mrtcmn/karne-html/master/img/grades/hg2.png')no-repeat
+      background: url('https://raw.githubusercontent.com/mrtcmn/karne-html/master/img/grades/hg2.png') no-repeat
     &.level3
-      background: url('https://raw.githubusercontent.com/mrtcmn/karne-html/master/img/grades/hg3.png')no-repeat
+      background: url('https://raw.githubusercontent.com/mrtcmn/karne-html/master/img/grades/hg3.png') no-repeat
     &.level4
-      background: url('https://raw.githubusercontent.com/mrtcmn/karne-html/master/img/grades/hg4.png')no-repeat
+      background: url('https://raw.githubusercontent.com/mrtcmn/karne-html/master/img/grades/hg4.png') no-repeat
     &.level5
-      background: url('https://raw.githubusercontent.com/mrtcmn/karne-html/master/img/grades/hg5.png')no-repeat
+      background: url('https://raw.githubusercontent.com/mrtcmn/karne-html/master/img/grades/hg5.png') no-repeat
 
 #container
   width: 19cm
@@ -516,12 +518,10 @@ table
   position: relative
   margin-left: 1cm
   margin-right: 1cm
-  background: url("https://raw.githubusercontent.com/mrtcmn/karne-html/master/img/anatomy2.png")no-repeat center
+  background: url("https://raw.githubusercontent.com/mrtcmn/karne-html/master/img/anatomy2.png") no-repeat center
   background-size: contain
 
-
-
-.fieldsUst,.fieldsAlt,.fieldsUstYazi,.fieldsAltYazi
+.fieldsUst, .fieldsAlt, .fieldsUstYazi, .fieldsAltYazi
   position: absolute
 
 .fieldsUstYazi
@@ -550,8 +550,6 @@ table
   &.level5
     color: $level5
 
-
-
 .speedItems
   width: 19cm
   height: 4cm
@@ -570,13 +568,12 @@ table
       width: 5cm
       height: 3cm
       margin: 0.2cm 0.1cm 0cm 0.6cm
-      background: url(https://raw.githubusercontent.com/mrtcmn/karne-html/master/img/speedBar.png)no-repeat center top
+      background: url(https://raw.githubusercontent.com/mrtcmn/karne-html/master/img/speedBar.png) no-repeat center top
       background-size: contain
       img
         width: 4.2cm
         position: relative
         bottom: -2cm
-
 
 .gradeChart
   width: 4cm
@@ -611,9 +608,8 @@ table
     &.level5
       background-color: $level5
 
-
 .posturMain
-  background: url('https://raw.githubusercontent.com/mrtcmn/karne-html/master/img/postur.png')no-repeat center
+  background: url('https://raw.githubusercontent.com/mrtcmn/karne-html/master/img/postur.png') no-repeat center
   background-size: contain
   height: 14cm
   width: 19cm
@@ -630,7 +626,6 @@ table
 
 .omurga
   width: 6cm
-
 
 .omurgaS
   width: 6cm
@@ -688,7 +683,7 @@ table
       .altKisim
         margin-top: 0.5cm
         height: 4.1cm
-        background: url('https://raw.githubusercontent.com/mrtcmn/karne-html/master/img/bg-divider.png')no-repeat center
+        background: url('https://raw.githubusercontent.com/mrtcmn/karne-html/master/img/bg-divider.png') no-repeat center
         background-size: contain
         .SolText
           display: inline-block
@@ -731,13 +726,12 @@ table
             object-fit: contain
             width: 6cm
 
-
 .somototip
   .leffImage
     width: 12cm
     height: 13.5cm
     display: inline-block
-    background: url("https://raw.githubusercontent.com/mrtcmn/karne-html/master/img/somototype.png")no-repeat
+    background: url("https://raw.githubusercontent.com/mrtcmn/karne-html/master/img/somototype.png") no-repeat
     background-size: contain
   .rightItems
     width: 7cm
@@ -785,6 +779,7 @@ table
     object-fit: contain
     width: 9cm
     height: 5cm
+
 .rightt
   width: 9cm
   display: inline-block
@@ -792,7 +787,6 @@ table
   p
     font-size: 8pt
     margin-bottom: 0.1cm
-
 
 .fonksiyonelk
   height: 7.2cm
@@ -815,9 +809,9 @@ table
   background: #ffffff
   text-align: center
   width: 10cm
-  -webkit-box-shadow: 0px 0px 20px -2px rgba(0,0,0,0.75)
-  -moz-box-shadow: 0px 0px 20px -2px rgba(0,0,0,0.75)
-  box-shadow: 0px 0px 20px -2px rgba(0,0,0,0.75)
+  -webkit-box-shadow: 0px 0px 20px -2px rgba(0, 0, 0, 0.75)
+  -moz-box-shadow: 0px 0px 20px -2px rgba(0, 0, 0, 0.75)
+  box-shadow: 0px 0px 20px -2px rgba(0, 0, 0, 0.75)
   position: absolute
   padding: 20px
   &.ayak
@@ -827,27 +821,21 @@ table
     top: 8cm
     left: 5cm
 
-
 .modalbg
   background-size: cover
   &.contact
-    background: url('dietologo-nutrizionista-home.jpg')no-repeat center
-
-
+    background: url('dietologo-nutrizionista-home.jpg') no-repeat center
 
 .modalbg
   p
     color: rgb(37, 37, 37)
     padding: 15px 0
 
-
 h1.modalT
   color: #df425f
   font-weight: 400
   padding: 15px 0
   font-size: 3.5em
-
-
 
 .vAlign
   display: table-cell
@@ -859,7 +847,6 @@ h1.modalT
 th
   &.fms_items
     width: initial
-
 
 hr
   display: block
