@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<script>
+
+    let data = {
+        "erkek": {
+            "iyi": {
+                "10": "3.89",
+                "11": "3.91",
+                "12": "3.88",
+                "13": "3.40",
+                "14": "3.20"
+            },
+            "orta_ustu": {
+                "10": "4.07",
+                "11": "4.03",
+                "12": "4.02",
+                "13": "3.89",
+                "14": "3.49"
+            },
+            "orta": {
+                "10": "4.31",
+                "11": "4.25",
+                "12": "4.16",
+                "13": "4.10",
+                "14": "4.00"
+            },
+            "orta_alti": {
+                "10": "5.00",
+                "11": "4.61",
+                "12": "4.37",
+                "13": "4.29",
+                "14": "4.18"
+            },
+            "dusuk": {
+                "10": "5.01",
+                "11": "4.62",
+                "12": "4.38",
+                "13": "4.30",
+                "14": "4.19"
+            }
+        },
+        "kadın": {
+            "iyi": {
+                "10": "3.51",
+                "11": "3.48",
+                "12": "3.43",
+                "13": "3.60",
+                "14": "3.60"
+            },
+            "orta_ustu": {
+                "10": "4.40",
+                "11": "4.21",
+                "12": "4.16",
+                "13": "4.09",
+                "14": "3.99"
+            },
+            "orta": {
+                "10": "4.59",
+                "11": "4.46",
+                "12": "4.41",
+                "13": "4.30",
+                "14": "4.20"
+            },
+            "orta_alti": {
+                "10": "5.34",
+                "11": "5.05",
+                "12": "4.61",
+                "13": "4.49",
+                "14": "4.49"
+            },
+            "dusuk": {
+                "10": "5.35",
+                "11": "5.06",
+                "12": "4.62",
+                "13": "4.50",
+                "14": "4.50"
+            }
+        }
+    };
+
+    Object.keys(data)
+
+    let _genders = Object.keys(data);
+    let _grades = Object.keys(data['erkek']);
+    let _ages = Object.keys(data['erkek']['iyi']);
+    let doIt = (data, genders, ages, grades) => {
+        let temp = {};
+        for (let Igender = 0; Igender < genders.length; Igender++) {
+            temp[genders[Igender]] = temp[genders[Igender]] || {};
+
+            for (let Iage = 0; Iage < ages.length; Iage++) {
+                temp[genders[Igender]][ages[Iage]] = temp[genders[Igender]][ages[Iage]] || {};
+
+                for (let Igrade = 0; Igrade < grades.length; Igrade++) {
+
+                    temp[genders[Igender]][ages[Iage]][grades[Igrade]] = data[genders[Igender]][grades[Igrade]][ages[Iage]];
+
+                }
+            }
+        }
+        return temp;
+    }
+
+console.log(doIt(data,_genders,_ages,_grades));
+</script>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>

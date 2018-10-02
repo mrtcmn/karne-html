@@ -1,0 +1,16 @@
+{
+  "erkek": {
+    "iyi": "5.76",
+    "orta_ustu": "5",
+    "orta": "4.25",
+    "orta_alti": "3.5",
+    "dusuk": "3.49"
+  },
+  "kadın": {
+    "iyi": "5.76",
+    "orta_ustu": "5",
+    "orta": "4.25",
+    "orta_alti": "3.5",
+    "dusuk": "3.49"
+  }
+}
