@@ -1,0 +1,132 @@
+{
+  "erkek": {
+    "9": {
+      "iyi": "1160",
+      "orta_ustu": "1140",
+      "orta": "940",
+      "orta_alti": "720",
+      "dusuk": "540"
+    },
+    "10": {
+      "iyi": "1240",
+      "orta_ustu": "1220",
+      "orta": "940",
+      "orta_alti": "740",
+      "dusuk": "560"
+    },
+    "11": {
+      "iyi": "1340",
+      "orta_ustu": "1320",
+      "orta": "1020",
+      "orta_alti": "800",
+      "dusuk": "600"
+    },
+    "12": {
+      "iyi": "1500",
+      "orta_ustu": "1480",
+      "orta": "1140",
+      "orta_alti": "900",
+      "dusuk": "660"
+    },
+    "13": {
+      "iyi": "1680",
+      "orta_ustu": "1640",
+      "orta": "1280",
+      "orta_alti": "1000",
+      "dusuk": "760"
+    },
+    "14": {
+      "iyi": "1840",
+      "orta_ustu": "1820",
+      "orta": "1400",
+      "orta_alti": "1100",
+      "dusuk": "840"
+    },
+    "15": {
+      "iyi": "1940",
+      "orta_ustu": "1920",
+      "orta": "1480",
+      "orta_alti": "1160",
+      "dusuk": "880"
+    },
+    "16": {
+      "iyi": "2040",
+      "orta_ustu": "2020",
+      "orta": "1560",
+      "orta_alti": "1220",
+      "dusuk": "940"
+    },
+    "17": {
+      "iyi": "2140",
+      "orta_ustu": "2120",
+      "orta": "1620",
+      "orta_alti": "1280",
+      "dusuk": "980"
+    }
+  },
+  "kadın": {
+    "9": {
+      "iyi": "940",
+      "orta_ustu": "920",
+      "orta": "720",
+      "orta_alti": "580",
+      "dusuk": "460"
+    },
+    "10": {
+      "iyi": "980",
+      "orta_ustu": "960",
+      "orta": "760",
+      "orta_alti": "600",
+      "dusuk": "460"
+    },
+    "11": {
+      "iyi": "1040",
+      "orta_ustu": "1020",
+      "orta": "800",
+      "orta_alti": "620",
+      "dusuk": "460"
+    },
+    "12": {
+      "iyi": "1080",
+      "orta_ustu": "1060",
+      "orta": "820",
+      "orta_alti": "640",
+      "dusuk": "480"
+    },
+    "13": {
+      "iyi": "1120",
+      "orta_ustu": "1100",
+      "orta": "840",
+      "orta_alti": "660",
+      "dusuk": "480"
+    },
+    "14": {
+      "iyi": "1140",
+      "orta_ustu": "1120",
+      "orta": "860",
+      "orta_alti": "660",
+      "dusuk": "480"
+    },
+    "15": {
+      "iyi": "1160",
+      "orta_ustu": "1140",
+      "orta": "880",
+      "orta_alti": "680",
+      "dusuk": "500"
+    },
+    "16": {
+      "iyi": "1180",
+      "orta_ustu": "1160",
+      "orta": "880",
+      "orta_alti": "680",
+      "dusuk": "500"
+    },
+    "17": {
+      "iyi": "1200",
+      "orta_ustu": "1180",
+      "orta": "900",
+      "orta_alti": "700",
+      "dusuk": "500"
+    }
+  }
+}

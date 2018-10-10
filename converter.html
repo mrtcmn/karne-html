@@ -1,108 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
+<script
+        src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
 <script>
 
-    let data = {
-        "erkek": {
-            "iyi": {
-                "10": "3.89",
-                "11": "3.91",
-                "12": "3.88",
-                "13": "3.40",
-                "14": "3.20"
+    $(document).ready(function () {
+        let data = {
+            "erkek": {
+                "iyi": {
+                    "9": "5.76",
+                    "10": "5.76",
+                    "11": "5.76",
+                    "12": "5.76",
+                    "13": "5.76",
+                    "14": "5.76",
+                    "15": "5.76",
+                    "16": "5.76",
+                    "17": "5.76"
+                },
+                "orta_ustu": {
+                    "9": "5.75",
+                    "10": "5.75",
+                    "11": "5.75",
+                    "12": "5.75",
+                    "13": "5.75",
+                    "14": "5.75",
+                    "15": "5.75",
+                    "16": "5.75",
+                    "17": "5.75"
+                },
+                "orta": {
+                    "9": "4.99",
+                    "10": "4.99",
+                    "11": "4.99",
+                    "12": "4.99",
+                    "13": "4.99",
+                    "14": "4.99",
+                    "15": "4.99",
+                    "16": "4.99",
+                    "17": "4.99"
+                },
+                "orta_alti": {
+                    "9": "4.24",
+                    "10": "4.24",
+                    "11": "4.24",
+                    "12": "4.24",
+                    "13": "4.24",
+                    "14": "4.24",
+                    "15": "4.24",
+                    "16": "4.24",
+                    "17": "4.24"
+                },
+                "dusuk": {
+                    "9": "3.49",
+                    "10": "3.49",
+                    "11": "3.49",
+                    "12": "3.49",
+                    "13": "3.49",
+                    "14": "3.49",
+                    "15": "3.49",
+                    "16": "3.49",
+                    "17": "3.49"
+                }
             },
-            "orta_ustu": {
-                "10": "4.07",
-                "11": "4.03",
-                "12": "4.02",
-                "13": "3.89",
-                "14": "3.49"
-            },
-            "orta": {
-                "10": "4.31",
-                "11": "4.25",
-                "12": "4.16",
-                "13": "4.10",
-                "14": "4.00"
-            },
-            "orta_alti": {
-                "10": "5.00",
-                "11": "4.61",
-                "12": "4.37",
-                "13": "4.29",
-                "14": "4.18"
-            },
-            "dusuk": {
-                "10": "5.01",
-                "11": "4.62",
-                "12": "4.38",
-                "13": "4.30",
-                "14": "4.19"
-            }
-        },
-        "kadın": {
-            "iyi": {
-                "10": "3.51",
-                "11": "3.48",
-                "12": "3.43",
-                "13": "3.60",
-                "14": "3.60"
-            },
-            "orta_ustu": {
-                "10": "4.40",
-                "11": "4.21",
-                "12": "4.16",
-                "13": "4.09",
-                "14": "3.99"
-            },
-            "orta": {
-                "10": "4.59",
-                "11": "4.46",
-                "12": "4.41",
-                "13": "4.30",
-                "14": "4.20"
-            },
-            "orta_alti": {
-                "10": "5.34",
-                "11": "5.05",
-                "12": "4.61",
-                "13": "4.49",
-                "14": "4.49"
-            },
-            "dusuk": {
-                "10": "5.35",
-                "11": "5.06",
-                "12": "4.62",
-                "13": "4.50",
-                "14": "4.50"
-            }
-        }
-    };
-
-    Object.keys(data)
-
-    let _genders = Object.keys(data);
-    let _grades = Object.keys(data['erkek']);
-    let _ages = Object.keys(data['erkek']['iyi']);
-    let doIt = (data, genders, ages, grades) => {
-        let temp = {};
-        for (let Igender = 0; Igender < genders.length; Igender++) {
-            temp[genders[Igender]] = temp[genders[Igender]] || {};
-
-            for (let Iage = 0; Iage < ages.length; Iage++) {
-                temp[genders[Igender]][ages[Iage]] = temp[genders[Igender]][ages[Iage]] || {};
-
-                for (let Igrade = 0; Igrade < grades.length; Igrade++) {
-
-                    temp[genders[Igender]][ages[Iage]][grades[Igrade]] = data[genders[Igender]][grades[Igrade]][ages[Iage]];
-
+            "kadın": {
+                "iyi": {
+                    "9": "5.76",
+                    "10": "5.76",
+                    "11": "5.76",
+                    "12": "5.76",
+                    "13": "5.76",
+                    "14": "5.76",
+                    "15": "5.76",
+                    "16": "5.76",
+                    "17": "5.76"
+                },
+                "orta_ustu": {
+                    "9": "5.75",
+                    "10": "5.75",
+                    "11": "5.75",
+                    "12": "5.75",
+                    "13": "5.75",
+                    "14": "5.75",
+                    "15": "5.75",
+                    "16": "5.75",
+                    "17": "5.75"
+                },
+                "orta": {
+                    "9": "4.99",
+                    "10": "4.99",
+                    "11": "4.99",
+                    "12": "4.99",
+                    "13": "4.99",
+                    "14": "4.99",
+                    "15": "4.99",
+                    "16": "4.99",
+                    "17": "4.99"
+                },
+                "orta_alti": {
+                    "9": "4.24",
+                    "10": "4.24",
+                    "11": "4.24",
+                    "12": "4.24",
+                    "13": "4.24",
+                    "14": "4.24",
+                    "15": "4.24",
+                    "16": "4.24",
+                    "17": "4.24"
+                },
+                "dusuk": {
+                    "9": "3.49",
+                    "10": "3.49",
+                    "11": "3.49",
+                    "12": "3.49",
+                    "13": "3.49",
+                    "14": "3.49",
+                    "15": "3.49",
+                    "16": "3.49",
+                    "17": "3.49"
                 }
             }
         }
-        return temp;
-    }
 
-console.log(doIt(data,_genders,_ages,_grades));
+
+
+        Object.keys(data);
+
+        let _genders = Object.keys(data);
+        let _grades = Object.keys(data['erkek']);
+        let _ages = Object.keys(data['erkek']['iyi']);
+        let doIt = (data, genders, ages, grades) => {
+            let temp = {};
+            for (let Igender = 0; Igender < genders.length; Igender++) {
+                temp[genders[Igender]] = temp[genders[Igender]] || {};
+
+                for (let Iage = 0; Iage < ages.length; Iage++) {
+                    temp[genders[Igender]][ages[Iage]] = temp[genders[Igender]][ages[Iage]] || {};
+
+                    for (let Igrade = 0; Igrade < grades.length; Igrade++) {
+
+                        temp[genders[Igender]][ages[Iage]][grades[Igrade]] = data[genders[Igender]][grades[Igrade]][ages[Iage]];
+
+                    }
+                }
+            }
+            return temp;
+        }
+
+        $('#demo').text(JSON.stringify(doIt(data, _genders, _ages, _grades)));
+    });
+
+
 </script>
 
 <head>
@@ -110,6 +160,6 @@ console.log(doIt(data,_genders,_ages,_grades));
     <title>Title</title>
 </head>
 <body>
-
+<div id="demo"></div>
 </body>
 </html>
